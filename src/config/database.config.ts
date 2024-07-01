@@ -8,5 +8,11 @@ export const databaseConfig: TypeOrmModuleOptions = {
   password: '022002',      // Substitua pela senha do seu banco de dados
   database: 'appmobi',  // Substitua pelo nome do seu banco de dados
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-  synchronize: true,          // Ajuste conforme necessário (true para desenvolvimento, false para produção)
+  synchronize: false,             // Desativar sincronização automática
+  migrations: [__dirname + '/../migrations/**/*{.ts,.js}'],
+};
+
+// Configuração separada para CLI de migrações
+export const cliConfig = {
+  migrationsDir: 'src/migrations',
 };

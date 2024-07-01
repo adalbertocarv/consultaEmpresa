@@ -16,16 +16,16 @@ export class OperadorasService {
 operadora
  * pelo seu ID no banco de dados.
  * 
- * @param idoperadora - ID da operadora a ser buscada.
+ * @param id_operadora - ID da operadora a ser buscada.
  * @returns A entidade Operadora correspondente ou null se não
 encontrada.
  */
- async findById(idoperadora: number): Promise<Operadora> {
+ async findById(id_operadora: number): Promise<Operadora> {
  // Loga a operação de busca de uma operadora pelo ID
- this.logger.log(`Buscando operadora com o id ${idoperadora}`);
+ this.logger.log(`Buscando operadora com o id ${id_operadora}`);
  // Usa o repositório do TypeORM para buscar a operadora pelo ID
  const operadora = await this.operadorasRepository.findOne({
-where: { idoperadora } });
+where: { id_operadora } });
  // Loga o resultado da busca
  this.logger.log(`Resultado da busca: 
 ${JSON.stringify(operadora)}`);
